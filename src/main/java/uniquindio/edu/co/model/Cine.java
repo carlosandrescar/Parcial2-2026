@@ -165,8 +165,8 @@ public class Cine{
         String reservar = "";
         Persona cliente = buscarCliente(documento);
         Funcion pelicula = buscarFuncion(codigoUnico);
-        if (cliente != null && pelicula != null)  {
-            Venta reserva = new Venta(fechaRealizacion, fila, tipoSalas, columna, numeroAsiento,persona, funcion);
+        if (cliente != null && pelicula != null) {
+            Venta reserva = new Venta(fechaRealizacion, fila, tipoSalas, columna, numeroAsiento, persona, funcion);
             listCineVentas.add(reserva);
             reservar = "Las bolestas fueron reservadas con exito";
         } else {
@@ -174,9 +174,6 @@ public class Cine{
         }
         return reservar;
     }
-
-
-
 
 
 
