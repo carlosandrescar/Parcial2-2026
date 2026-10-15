@@ -11,11 +11,10 @@ public class Pelicula extends Funcion{
      * @param fechaFuncion de la pelicula
      * @param horaIncio de la pelicula
      * @param duracion de la pelicula
-     * @param capacidadMaxima de la pelicula
      * @param titulo de la pelicula
      */
-    public Pelicula(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula) {
-        super(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima);
+    public Pelicula(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula) {
+        super(codigoUnico, fechaFuncion, horaIncio, duracion);
         this.titulo = titulo;
         this.clasificacionPelicula = clasificacionPelicula;
         this.generoPelicula = generoPelicula;

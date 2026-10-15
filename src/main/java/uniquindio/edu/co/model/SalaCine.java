@@ -11,11 +11,10 @@ public class SalaCine extends Funcion{
      * @param fechaFuncion de sala 3D
      * @param horaIncio de sala 3D
      * @param duracion de sala 3D
-     * @param capacidadMaxima de sala 3D
      * @param recargo de sala 3D
      */
-    public SalaCine(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, double  recargo) {
-        super(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima);
+    public SalaCine(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, double  recargo) {
+        super(codigoUnico, fechaFuncion, horaIncio, duracion);
         this.recargo = recargo;
     }
 

@@ -7,7 +7,6 @@ public class Funcion {
     private String fechaFuncion;
     private int horaIncio;
     private int duracion;
-    private int capacidadMaxima;
 
     /**
      * Metodo Constructor de las funciones
@@ -16,20 +15,11 @@ public class Funcion {
      * @param horaIncio de la funcion
      * @param duracion de la funcion
      */
-    public Funcion(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima) {
+    public Funcion(int codigoUnico, String fechaFuncion, int horaIncio, int duracion) {
         this.codigoUnico = codigoUnico;
         this.fechaFuncion = fechaFuncion;
         this.horaIncio = horaIncio;
         this.duracion = duracion;
-        this.capacidadMaxima = capacidadMaxima;
-    }
-
-    public int getCapacidadMaxima() {
-        return capacidadMaxima;
-    }
-
-    public void setCapacidadMaxima(int capacidadMaxima) {
-        this.capacidadMaxima = capacidadMaxima;
     }
 
     public int getCodigoUnico() {
@@ -71,7 +61,6 @@ public class Funcion {
                 ", fechaFuncion=" + fechaFuncion +
                 ", horaIncio=" + horaIncio +
                 ", duracion=" + duracion +
-                ", capacidadMaxima=" + capacidadMaxima +
                 '}';
     }
 }

@@ -2,15 +2,13 @@ package uniquindio.edu.co.model;
 
 import uniquindio.edu.co.TipoSalas;
 
-import java.util.List;
-
 public class Venta {
     private String fechaRealizacion;
     private int fila;
     private int columna;
     private int numeroAsiento;
     public final static double PRECIOBASE = 15000;
-    private double valorIndividual;
+    private int codigoSala;
     private final static double DESCUENTOCLIENTE = 0.15;
     TipoSalas tipoSalas;
 
@@ -22,19 +20,31 @@ public class Venta {
      * @param fechaRealizacion de Venta
      * @param fila de Venta
      * @param numeroAsiento de Venta
-     * @param valorIndividual de Venta
      * @param persona de Venta
      * @param funcion de Venta
      */
-    public Venta(String fechaRealizacion, int fila, TipoSalas tipoSalas, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion) {
+    public Venta(String fechaRealizacion, int fila, TipoSalas tipoSalas, int columna, int numeroAsiento,Persona persona, Funcion funcion) {
         this.fechaRealizacion = fechaRealizacion;
         this.fila = fila;
         this.columna = columna;
         this.numeroAsiento = numeroAsiento;
-        this.valorIndividual = valorIndividual;
         this.persona = persona;
         this.funcion = funcion;
     }
+
+    public double calcularTipoSala(int numeroAsiento, String total){
+        double valor  = 0;
+        if(tipoSalas == TipoSalas.SALA_3D){
+            valor = ((PRECIOBASE * DESCUENTOCLIENTE ) *(1- (20/100))) * numeroAsiento;
+        } else if(tipoSalas == TipoSalas.SALA_VIP){
+            valor = ((PRECIOBASE * DESCUENTOCLIENTE) *(1- (30/100))) * numeroAsiento;
+        }else
+            valor = (PRECIOBASE * DESCUENTOCLIENTE) * numeroAsiento;
+        return valor;
+    }
+
+
+
 
     public int getColumna() {
         return columna;
@@ -66,14 +76,6 @@ public class Venta {
 
     public void setNumeroAsiento(int numeroasiento) {
         this.numeroAsiento = numeroasiento;
-    }
-
-    public double getValorIndividual() {
-        return valorIndividual;
-    }
-
-    public void setValorIndividual(double valorIndividual) {
-        this.valorIndividual = valorIndividual;
     }
 
     public Persona getPersona() {
