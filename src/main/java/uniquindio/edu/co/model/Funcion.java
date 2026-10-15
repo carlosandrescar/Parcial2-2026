@@ -1,10 +1,11 @@
 package uniquindio.edu.co.model;
 
+import uniquindio.edu.co.TipoSalas;
+
 public class Funcion {
     private int codigoUnico;
     private String fechaFuncion;
     private int horaIncio;
-    public final static double PRECIOBASE = 15000;
     private int duracion;
     private int capacidadMaxima;
 

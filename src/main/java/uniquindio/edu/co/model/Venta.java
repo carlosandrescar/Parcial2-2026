@@ -1,5 +1,7 @@
 package uniquindio.edu.co.model;
 
+import uniquindio.edu.co.TipoSalas;
+
 import java.util.List;
 
 public class Venta {
@@ -7,8 +9,10 @@ public class Venta {
     private int fila;
     private int columna;
     private int numeroAsiento;
+    public final static double PRECIOBASE = 15000;
     private double valorIndividual;
-    private final static double descuentoCliente = 0.15;
+    private final static double DESCUENTOCLIENTE = 0.15;
+    TipoSalas tipoSalas;
 
     private Persona persona;
     private Funcion funcion;
@@ -22,7 +26,7 @@ public class Venta {
      * @param persona de Venta
      * @param funcion de Venta
      */
-    public Venta( String fechaRealizacion, int fila, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion) {
+    public Venta(String fechaRealizacion, int fila, TipoSalas tipoSalas, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion) {
         this.fechaRealizacion = fechaRealizacion;
         this.fila = fila;
         this.columna = columna;
@@ -31,7 +35,6 @@ public class Venta {
         this.persona = persona;
         this.funcion = funcion;
     }
-
 
     public int getColumna() {
         return columna;
@@ -89,19 +92,4 @@ public class Venta {
         this.funcion = funcion;
     }
 
-    //---------------------------------------------------------------------------------
-
-
-    @Override
-    public String toString() {
-        return "Venta{" +
-                "fechaRealizacion='" + fechaRealizacion + '\'' +
-                ", fila=" + fila +
-                ", columna=" + columna +
-                ", numeroAsiento=" + numeroAsiento +
-                ", valorIndividual=" + valorIndividual +
-                ", persona=" + persona +
-                ", funcion=" + funcion +
-                '}';
-    }
 }

@@ -1,7 +1,9 @@
 package uniquindio.edu.co.model;
 
-public class sala3D extends Funcion{
-    private double  recargo2;
+import uniquindio.edu.co.TipoSalas;
+
+public class SalaCine extends Funcion{
+    private double  recargo;
     public final static int SILLADISPONIBLE = 20;
     /**
      * Metodo constructor de sala 3D
@@ -10,25 +12,25 @@ public class sala3D extends Funcion{
      * @param horaIncio de sala 3D
      * @param duracion de sala 3D
      * @param capacidadMaxima de sala 3D
-     * @param recargo2 de sala 3D
+     * @param recargo de sala 3D
      */
-    public sala3D(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, double  recargo2) {
+    public SalaCine(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, double  recargo) {
         super(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima);
-        this.recargo2 = recargo2;
+        this.recargo = recargo;
     }
 
-    public double  getRecargo2() {
-        return recargo2;
+    public double  getRecargo() {
+        return recargo;
     }
 
-    public void setRecargo2(double recargo2) {
-        this.recargo2 = recargo2;
+    public void setRecargo(double recargo) {
+        this.recargo = recargo;
     }
 
     @Override
     public String toString() {
         return "sala3D{" +
-                "recargo2=" + recargo2 +
+                "recargo2=" + recargo +
                 '}';
     }
 }

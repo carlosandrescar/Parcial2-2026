@@ -43,41 +43,52 @@ public class Main {
                     Persona cliente = cine1.buscarCliente(codigo);
                     if (cliente != null) {
                         JOptionPane.showMessageDialog(null, "Cliente encontrado:\n" + cliente);
-                    }else {
+                    } else {
                         JOptionPane.showMessageDialog(null, "El cliente no esta registrado :(");
                     }
 
-                } else if (opcion == 3){
+                }else if (opcion == 3) { //--rerserva boletas---
                     String fechaRealizacion = JOptionPane.showInputDialog(null, "Ingrese la fecha de realizacion:");
-                    int fila = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de la fila para los asientos (1-10)"));
-                    int columna = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de la columna para los asientos (1-10)"));
-                    int numeroAsiento = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese la cantidad de boletas que desee"));
-                    double valorIndividual = Double.parseDouble(JOptionPane.showInputDialog(null,"numero"));
-                    int documento = Integer.parseInt(JOptionPane.showInputDialog(null,"ingrese el documento con el que va a realizar la reserva"));
-                    String resultado = cine1.reservarBoletas(fechaRealizacion,fila,columna,numeroAsiento, valorIndividual,null, null,documento);
+                    int fila = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de la fila para los asientos (1-10)"));
+                    int columna = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el numero de la columna para los asientos (1-10)"));
+                    int numeroAsiento = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de boletas que desee"));
+                    double valorIndividual = Double.parseDouble(JOptionPane.showInputDialog(null, "numero"));
+                    int documento = Integer.parseInt(JOptionPane.showInputDialog(null, "ingrese el documento con el que va a realizar la reserva"));
+                    int opcionSala = Integer.parseInt(JOptionPane.showInputDialog(null, """
+                            Seleccione el tipo de sala que desea
+                            1. Tradicional (sin costos adicionales)
+                            2. VIP (30% de recargo adicional)
+                            3. 3D (20% de recargo adicional)
+                            Seleccione una opción:
+                            """));
+                    TipoSalas tipoSala = null;
+                    if (opcionSala == 1) {
+                    tipoSala = TipoSalas.TRADICIONAL;
+                    }else if (opcionSala == 2) {
+                    tipoSala = TipoSalas.SALA_VIP;
+                    } else if (opcionSala == 3) {
+                        tipoSala = TipoSalas.SALA_3D;
+                    }
+                    String resultado = cine1.reservarBoletas(fechaRealizacion, fila, columna, numeroAsiento, valorIndividual, null, null, documento, tipoSala);
                     JOptionPane.showMessageDialog(null, resultado);
 
 
-
-
-
-
-                } else if (opcion == 5) {
+                }else if(opcion == 5){
                     int codigoUnico = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el codigo con el que se guardara la funcion"));
                     String fechaFuncion = JOptionPane.showInputDialog(null, "Ingrese el dia de la funcion:");
                     int horaIncio = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la hora de inico de la pelicula"));
                     int duracion = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Cuanto dura aproximadamente la pelicula?:"));
-                    int  capacidadMaxima = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de asientos disponibles para la funcion:"));
+                    int capacidadMaxima = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de asientos disponibles para la funcion:"));
                     String titulo = JOptionPane.showInputDialog(null, "Ingrese el nombre de la pelicula:");
                     int opcionGenero = Integer.parseInt(JOptionPane.showInputDialog(null, """
-                            Seleccione el genero de la pelicula
-                            1. ACCION,
-                            2. COMEDIA,
-                            3. DRAMA,
-                            4. TERROR,
-                            5. ANIMACION
-                            Seleccione una opción:
-                            """));
+                                Seleccione el genero de la pelicula
+                                1. ACCION,
+                                2. COMEDIA,
+                                3. DRAMA,
+                                4. TERROR,
+                                5. ANIMACION
+                                Seleccione una opción:
+                                """));
                     GeneroPelicula genero1 = null;
                     if (opcionGenero == 1) {
                         genero1 = GeneroPelicula.ACCION;
@@ -91,12 +102,12 @@ public class Main {
                         genero1 = GeneroPelicula.ANIMACION;
                     }
                     int opcionClasificacion = Integer.parseInt(JOptionPane.showInputDialog(null, """
-                            Seleccione la clasificacion de la pelicula
-                            1. MAYORES_DE_EDAD
-                            2. MENORES_DE_EDAD
-                            3. TODAS_LAS_EDADES
-                            Seleccione una opción:
-                            """));
+                                Seleccione la clasificacion de la pelicula
+                                1. MAYORES_DE_EDAD
+                                2. MENORES_DE_EDAD
+                                3. TODAS_LAS_EDADES
+                                Seleccione una opción:
+                                """));
                     ClasificacionPelicula clasificacion = null;
                     if (opcionClasificacion == 1) {
                         clasificacion = ClasificacionPelicula.MAYORES_DE_EDAD;
@@ -105,18 +116,18 @@ public class Main {
                     } else if (opcionClasificacion == 3) {
                         clasificacion = ClasificacionPelicula.TODAS_LAS_EDADES;
                     }
-                    String resultado = cine1.registrarFuncion(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima, titulo, genero1, clasificacion);
-                    JOptionPane.showMessageDialog(null, resultado);
-                } else if (opcion == 6) {
+                        String resultado = cine1.registrarFuncion(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima, titulo, genero1, clasificacion);
+                        JOptionPane.showMessageDialog(null, resultado);
+                }else if (opcion == 6) {
                     int codigoUnico = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo de la funcion a encontrar:"));
                     Funcion pelicula = cine1.buscarFuncion(codigoUnico);
                     if (pelicula != null) {
                         JOptionPane.showMessageDialog(null, "Funcion encontrada:\n" + pelicula);
-                    } else {
+                    }else {
                         JOptionPane.showMessageDialog(null, "La funcion no esta registrada:(");
 
                     }
                 }
             }
-    }
+        }
 }

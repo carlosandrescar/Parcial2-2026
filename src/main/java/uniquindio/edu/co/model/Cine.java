@@ -1,5 +1,7 @@
 package uniquindio.edu.co.model;
 
+import uniquindio.edu.co.TipoSalas;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -160,11 +162,11 @@ public class Cine{
     }
     //_--------------------------------
 
-    public String reservarBoletas(String fechaRealizacion, int fila, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion, int documento){
+    public String reservarBoletas(String fechaRealizacion, int fila, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion, int documento, TipoSalas tipoSalas){
         String reservar = "";
         Persona cliente = buscarCliente(documento);
         if(cliente != null){
-            Venta reserva = new Venta(fechaRealizacion,fila,columna,numeroAsiento,valorIndividual,persona ,funcion);
+            Venta reserva = new Venta(fechaRealizacion,fila,tipoSalas, columna,numeroAsiento,valorIndividual,persona ,funcion);
             listCineVentas.add(reserva);
             reservar = "Las bolestas fueron reservadas con exito";
         }else{
