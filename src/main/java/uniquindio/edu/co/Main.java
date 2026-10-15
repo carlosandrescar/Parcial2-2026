@@ -68,7 +68,7 @@ public class Main {
                     } else if (opcionSala == 3) {
                         tipoSala = TipoSalas.SALA_3D;
                     }
-                    int codigoUnico = Integer.parseInt(JOptionPane.showInputDialog(null, "ingrese el documento con el que va a realizar la reserva"));
+                    int codigoUnico = Integer.parseInt(JOptionPane.showInputDialog(null, "ingrese codigo de la funcion a reservar reserva"));
                     String resultado = cine1.reservarBoletas(fechaRealizacion, fila, columna, numeroAsiento, null, null, documento, tipoSala,codigoUnico);
                     JOptionPane.showMessageDialog(null, resultado);
 
