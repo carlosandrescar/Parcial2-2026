@@ -12,7 +12,7 @@ public class sala3D extends Funcion{
      * @param capacidadMaxima de sala 3D
      * @param recargo2 de sala 3D
      */
-    public sala3D(int codigoUnico, String fechaFuncion, String horaIncio, String duracion, String capacidadMaxima, double  recargo2) {
+    public sala3D(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, double  recargo2) {
         super(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima);
         this.recargo2 = recargo2;
     }

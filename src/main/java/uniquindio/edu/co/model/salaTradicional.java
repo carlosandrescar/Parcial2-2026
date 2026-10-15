@@ -12,7 +12,7 @@ public class salaTradicional extends Funcion {
      * @param capacidadMaxima de sala tradicional
      * @param recargo de sala tradicional
      */
-    public salaTradicional(int codigoUnico, String fechaFuncion, String horaIncio, String duracion, String capacidadMaxima, double  recargo) {
+    public salaTradicional(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, double  recargo) {
         super(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima);
         this.recargo = recargo;
     }

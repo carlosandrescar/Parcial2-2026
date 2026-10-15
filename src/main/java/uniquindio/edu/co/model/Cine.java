@@ -121,15 +121,17 @@ public class Cine{
      * @param titulo de la funcion
      * @param generoPelicula de la funcion
      * @param clasificacionPelicula de la funcion
-     * @return .
+     * @return
      */
-    public boolean registrarFuncion(int codigoUnico, String fechaFuncion, String horaIncio, String duracion, String capacidadMaxima, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula){
-        boolean registroFuncion = false;
+    public String registrarFuncion(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula){
+        String registroFuncion = "";
         Funcion pelicula = buscarFuncion(codigoUnico);
-        if(pelicula==null){
-            Funcion registroPelicula = new Pelicula(codigoUnico, fechaFuncion, horaIncio, duracion,capacidadMaxima,titulo,generoPelicula,clasificacionPelicula);
+        if(pelicula==null && duracion > horaIncio){
+            Funcion registroPelicula = new Pelicula(codigoUnico,fechaFuncion, horaIncio, duracion,capacidadMaxima,titulo,generoPelicula,clasificacionPelicula);
             listCineFuncion.add(registroPelicula);
-            registroFuncion = true;
+            registroFuncion = "La Funcion con codigo " + codigoUnico + " Fue registrada con exito, para la facha " + fechaFuncion + " Con hora de inico a las " + horaIncio;
+        }else{
+            registroFuncion = "La Funcion con codigo " + codigoUnico + " no pudo realizarce por que existe otra funcion a esa hora";
         }
         return registroFuncion;
     }

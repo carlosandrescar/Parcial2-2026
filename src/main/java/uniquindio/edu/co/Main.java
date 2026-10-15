@@ -52,9 +52,9 @@ public class Main {
                 } else if (opcion == 5) {
                     int codigoUnico = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el codigo con el que se guardara la funcion"));
                     String fechaFuncion = JOptionPane.showInputDialog(null, "Ingrese el dia de la funcion:");
-                    String horaIncio = JOptionPane.showInputDialog(null, "Ingrese la hora de inico de la pelicula");
-                    String duracion = JOptionPane.showInputDialog(null, "¿Cuanto dura aproximadamente la pelicula?:");
-                    String capacidadMaxima = JOptionPane.showInputDialog(null, "Ingrese la cantidad de asientos disponibles para la funcion:");
+                    int horaIncio = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la hora de inico de la pelicula"));
+                    int duracion = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Cuanto dura aproximadamente la pelicula?:"));
+                    int  capacidadMaxima = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de asientos disponibles para la funcion:"));
                     String titulo = JOptionPane.showInputDialog(null, "Ingrese el nombre de la pelicula:");
                     int opcionGenero = Integer.parseInt(JOptionPane.showInputDialog(null, """
                             Seleccione el genero de la pelicula
@@ -92,7 +92,8 @@ public class Main {
                     } else if (opcionClasificacion == 3) {
                         clasificacion = ClasificacionPelicula.TODAS_LAS_EDADES;
                     }
-                    cine1.registrarFuncion(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima, titulo, genero1, clasificacion);
+                    String resultado = cine1.registrarFuncion(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima, titulo, genero1, clasificacion);
+                    JOptionPane.showMessageDialog(null, resultado);
                 } else if (opcion == 6) {
                     int codigoUnico = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el codigo de la funcion a encontrar:"));
                     Funcion pelicula = cine1.buscarFuncion(codigoUnico);

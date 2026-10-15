@@ -3,19 +3,19 @@ package uniquindio.edu.co.model;
 public class Funcion {
     private int codigoUnico;
     private String fechaFuncion;
-    private String horaIncio;
+    private int horaIncio;
     public final static double PRECIOBASE = 15000;
-    private String duracion;
-    private String capacidadMaxima;
+    private int duracion;
+    private int capacidadMaxima;
 
     /**
      * Metodo Constructor de las funciones
      * @param codigoUnico de la funcion
-     * @param fechaFuncion
-     * @param horaIncio
-     * @param duracion
+     * @param fechaFuncion de la funcion
+     * @param horaIncio de la funcion
+     * @param duracion de la funcion
      */
-    public Funcion(int codigoUnico, String fechaFuncion, String horaIncio, String duracion, String capacidadMaxima) {
+    public Funcion(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima) {
         this.codigoUnico = codigoUnico;
         this.fechaFuncion = fechaFuncion;
         this.horaIncio = horaIncio;
@@ -23,11 +23,11 @@ public class Funcion {
         this.capacidadMaxima = capacidadMaxima;
     }
 
-    public String getCapacidadMaxima() {
+    public int getCapacidadMaxima() {
         return capacidadMaxima;
     }
 
-    public void setCapacidadMaxima(String capacidadMaxima) {
+    public void setCapacidadMaxima(int capacidadMaxima) {
         this.capacidadMaxima = capacidadMaxima;
     }
 
@@ -47,19 +47,19 @@ public class Funcion {
         this.fechaFuncion = fechaFunsion;
     }
 
-    public String getHoraIncio() {
+    public int getHoraIncio() {
         return horaIncio;
     }
 
-    public void setHoraIncio(String horaIncio) {
+    public void setHoraIncio(int horaIncio) {
         this.horaIncio = horaIncio;
     }
 
-    public String getDuracion() {
+    public int getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(String duracion) {
+    public void setDuracion(int duracion) {
         this.duracion = duracion;
     }
 

@@ -14,7 +14,7 @@ public class Pelicula extends Funcion{
      * @param capacidadMaxima de la pelicula
      * @param titulo de la pelicula
      */
-    public Pelicula(int codigoUnico, String fechaFuncion, String horaIncio, String duracion, String capacidadMaxima, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula) {
+    public Pelicula(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, int capacidadMaxima, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula) {
         super(codigoUnico, fechaFuncion, horaIncio, duracion, capacidadMaxima);
         this.titulo = titulo;
         this.clasificacionPelicula = clasificacionPelicula;
