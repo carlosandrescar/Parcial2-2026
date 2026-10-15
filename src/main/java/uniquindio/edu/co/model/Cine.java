@@ -121,7 +121,7 @@ public class Cine{
      * @param titulo de la funcion
      * @param generoPelicula de la funcion
      * @param clasificacionPelicula de la funcion
-     * @return
+     * @return .
      */
     public boolean registrarFuncion(int codigoUnico, String fechaFuncion, String horaIncio, String duracion, String capacidadMaxima, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula){
         boolean registroFuncion = false;
