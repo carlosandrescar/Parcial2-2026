@@ -2,7 +2,7 @@ package uniquindio.edu.co.model;
 
 public class sala3D extends Funcion{
     private double  recargo2;
-
+    public final static int SILLADISPONIBLE = 20;
     /**
      * Metodo constructor de sala 3D
      * @param codigoUnico de sala 3D

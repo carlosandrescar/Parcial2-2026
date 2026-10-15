@@ -84,13 +84,15 @@ public class Cine{
      * @param documento del cliente
      * @return .
      */
-    public boolean registrarCliente(String nombre, int numeroTelefono, String correo, int documento){
-        boolean registrado = false;
+    public String registrarCliente(String nombre, int numeroTelefono, String correo, int documento){
+        String registrado = "";
         Persona cliente = buscarCliente(documento);
         if(cliente==null){
             Persona registro = new Cliente(nombre,numeroTelefono,correo,documento);
             listCinePersonas.add(registro);
-            registrado = true;
+            registrado = "El cliente con documento " + documento + " fue añadido con exito";
+        }else{
+            registrado = "El cliente con el documento " + documento + " ya esta registrado";
         }
         return registrado;
     }
@@ -130,6 +132,8 @@ public class Cine{
             Funcion registroPelicula = new Pelicula(codigoUnico,fechaFuncion, horaIncio, duracion,capacidadMaxima,titulo,generoPelicula,clasificacionPelicula);
             listCineFuncion.add(registroPelicula);
             registroFuncion = "La Funcion con codigo " + codigoUnico + " Fue registrada con exito, para la facha " + fechaFuncion + " Con hora de inico a las " + horaIncio;
+        }else if(pelicula != null){
+            registroFuncion = "La Funcion con codigo " + codigoUnico + " no pudo realizarce por que ya exite ese codigo";
         }else{
             registroFuncion = "La Funcion con codigo " + codigoUnico + " no pudo realizarce por que existe otra funcion a esa hora";
         }
@@ -139,7 +143,7 @@ public class Cine{
 
     /**
      * Metodo que permite buscar una funcion
-     * @param codigo2 de la funcion
+     * @param codigo2 que permite buscar una funcion
      * @return
      */
     public Funcion buscarFuncion(int codigo2){
@@ -154,10 +158,20 @@ public class Cine{
         return encontrada2;
 
     }
-
     //_--------------------------------
 
-
+    public String reservarBoletas(String fechaRealizacion, int fila, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion, int documento){
+        String reservar = "";
+        Persona cliente = buscarCliente(documento);
+        if(cliente != null){
+            Venta reserva = new Venta(fechaRealizacion,fila,columna,numeroAsiento,valorIndividual,persona ,funcion);
+            listCineVentas.add(reserva);
+            reservar = "Las bolestas fueron reservadas con exito";
+        }else{
+            reservar = "no se pudo realizar la reservacion, el cliente no existe";
+        }
+        return reservar;
+    }
 
 
 

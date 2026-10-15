@@ -35,18 +35,31 @@ public class Main {
                     int numeroTelefono = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese su numero de telefono"));
                     String correo = JOptionPane.showInputDialog(null, "Ingrese su correo electrónico:");
                     int documento = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese su numero de documento para el registro"));
-                    cine1.registrarCliente(nombre, numeroTelefono, correo, documento);
+                    String resultado = cine1.registrarCliente(nombre, numeroTelefono, correo, documento);
+                    JOptionPane.showMessageDialog(null, resultado);
 
                 } else if (opcion == 2) {
                     int codigo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese documento para buscar al cliente:"));
                     Persona cliente = cine1.buscarCliente(codigo);
                     if (cliente != null) {
                         JOptionPane.showMessageDialog(null, "Cliente encontrado:\n" + cliente);
-                    } else {
+                    }else {
                         JOptionPane.showMessageDialog(null, "El cliente no esta registrado :(");
                     }
 
-                    //------------------
+                } else if (opcion == 3){
+                    String fechaRealizacion = JOptionPane.showInputDialog(null, "Ingrese la fecha de realizacion:");
+                    int fila = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de la fila para los asientos (1-10)"));
+                    int columna = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese el numero de la columna para los asientos (1-10)"));
+                    int numeroAsiento = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingrese la cantidad de boletas que desee"));
+                    double valorIndividual = Double.parseDouble(JOptionPane.showInputDialog(null,"numero"));
+                    int documento = Integer.parseInt(JOptionPane.showInputDialog(null,"ingrese el documento con el que va a realizar la reserva"));
+                    String resultado = cine1.reservarBoletas(fechaRealizacion,fila,columna,numeroAsiento, valorIndividual,null, null,documento);
+                    JOptionPane.showMessageDialog(null, resultado);
+
+
+
+
 
 
                 } else if (opcion == 5) {

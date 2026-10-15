@@ -2,6 +2,7 @@ package uniquindio.edu.co.model;
 
 public class salaVip extends Funcion{
     private double  recargo2;
+    public final static int SILLADISPONIBLE = 10;
 
     /**
      * Metodo constructor de sala VIP

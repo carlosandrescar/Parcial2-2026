@@ -2,7 +2,9 @@ package uniquindio.edu.co.model;
 
 public class salaTradicional extends Funcion {
     private double recargo;
-
+    public final static int SILLADISPONIBLE = 20;
+    public final static int FILAS = 10;
+    public final static int COLUMNAS= 10;
     /**
      * Metodo constructor de sala tradicional
      * @param codigoUnico de sala tradicional

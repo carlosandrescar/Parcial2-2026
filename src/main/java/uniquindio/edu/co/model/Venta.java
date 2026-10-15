@@ -5,7 +5,8 @@ import java.util.List;
 public class Venta {
     private String fechaRealizacion;
     private int fila;
-    private int numeroasiento;
+    private int columna;
+    private int numeroAsiento;
     private double valorIndividual;
     private final static double descuentoCliente = 0.15;
 
@@ -16,23 +17,29 @@ public class Venta {
      * Metodo constructor de Venta
      * @param fechaRealizacion de Venta
      * @param fila de Venta
-     * @param numeroasiento de Venta
+     * @param numeroAsiento de Venta
      * @param valorIndividual de Venta
      * @param persona de Venta
      * @param funcion de Venta
      */
-    public Venta( String fechaRealizacion, int fila, int numeroasiento, double valorIndividual, Persona persona, Funcion funcion) {
+    public Venta( String fechaRealizacion, int fila, int columna, int numeroAsiento, double valorIndividual, Persona persona, Funcion funcion) {
         this.fechaRealizacion = fechaRealizacion;
         this.fila = fila;
-        this.numeroasiento = numeroasiento;
+        this.columna = columna;
+        this.numeroAsiento = numeroAsiento;
         this.valorIndividual = valorIndividual;
         this.persona = persona;
         this.funcion = funcion;
     }
-    //_---------------------------------------------------
 
 
+    public int getColumna() {
+        return columna;
+    }
 
+    public void setColumna(int columna) {
+        this.columna = columna;
+    }
 
     public  String getFechaRealizacion() {
         return fechaRealizacion;
@@ -50,12 +57,12 @@ public class Venta {
         this.fila = fila;
     }
 
-    public int getNumeroasiento() {
-        return numeroasiento;
+    public int getNumeroAsiento() {
+        return numeroAsiento;
     }
 
-    public void setNumeroasiento(int numeroasiento) {
-        this.numeroasiento = numeroasiento;
+    public void setNumeroAsiento(int numeroasiento) {
+        this.numeroAsiento = numeroasiento;
     }
 
     public double getValorIndividual() {
@@ -82,12 +89,16 @@ public class Venta {
         this.funcion = funcion;
     }
 
+    //---------------------------------------------------------------------------------
+
+
     @Override
     public String toString() {
         return "Venta{" +
-                "fechaRealizacion=" + fechaRealizacion +
+                "fechaRealizacion='" + fechaRealizacion + '\'' +
                 ", fila=" + fila +
-                ", numeroasiento=" + numeroasiento +
+                ", columna=" + columna +
+                ", numeroAsiento=" + numeroAsiento +
                 ", valorIndividual=" + valorIndividual +
                 ", persona=" + persona +
                 ", funcion=" + funcion +
