@@ -5,11 +5,9 @@ import uniquindio.edu.co.TipoSalas;
 public class Venta {
     private String fechaRealizacion;
     private int fila;
-    private int columna;
     private int numeroAsiento;
     public final static double PRECIOBASE = 15000;
     private int codigoSala;
-    private final static double DESCUENTOCLIENTE = 0.15;
     TipoSalas tipoSalas;
 
     private Persona persona;
@@ -23,36 +21,17 @@ public class Venta {
      * @param persona de Venta
      * @param funcion de Venta
      */
-    public Venta(String fechaRealizacion, int fila, TipoSalas tipoSalas, int columna, int numeroAsiento,Persona persona, Funcion funcion) {
+    public Venta(String fechaRealizacion, int fila, TipoSalas tipoSalas, int numeroAsiento,Persona persona, Funcion funcion) {
         this.fechaRealizacion = fechaRealizacion;
         this.fila = fila;
-        this.columna = columna;
         this.numeroAsiento = numeroAsiento;
         this.persona = persona;
         this.funcion = funcion;
     }
 
-    public double calcularTipoSala(int numeroAsiento, String total){
-        double valor  = 0;
-        if(tipoSalas == TipoSalas.SALA_3D){
-            valor = ((PRECIOBASE * DESCUENTOCLIENTE ) *(1- (20/100))) * numeroAsiento;
-        } else if(tipoSalas == TipoSalas.SALA_VIP){
-            valor = ((PRECIOBASE * DESCUENTOCLIENTE) *(1- (30/100))) * numeroAsiento;
-        }else
-            valor = (PRECIOBASE * DESCUENTOCLIENTE) * numeroAsiento;
-        return valor;
-    }
 
 
 
-
-    public int getColumna() {
-        return columna;
-    }
-
-    public void setColumna(int columna) {
-        this.columna = columna;
-    }
 
     public  String getFechaRealizacion() {
         return fechaRealizacion;
