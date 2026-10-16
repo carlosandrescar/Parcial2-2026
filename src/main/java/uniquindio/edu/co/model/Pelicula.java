@@ -1,39 +1,37 @@
 package uniquindio.edu.co.model;
 
-public class Pelicula extends Funcion{
+/**
+ * Película del catálogo de CinePlus.
+ */
+public class Pelicula {
+    private int codigo;
     private String titulo;
-    private GeneroPelicula generoPelicula;
-    private ClasificacionPelicula clasificacionPelicula;
+    private int duracionMinutos;
+    private GeneroPelicula genero;
+    private String clasificacionEdad;
 
     /**
-     * Metodo constructor de la pelicula
-     * @param codigoUnico de la pelicula
-     * @param fechaFuncion de la pelicula
-     * @param horaIncio de la pelicula
-     * @param duracion de la pelicula
-     * @param titulo de la pelicula
+     * Constructor de Pelicula
+     * @param codigo código único de la película
+     * @param titulo título
+     * @param duracionMinutos duración en minutos
+     * @param genero género cinematográfico
+     * @param clasificacionEdad clasificación por edad (ej: "Todo público", "+12", "+18")
      */
-    public Pelicula(int codigoUnico, String fechaFuncion, int horaIncio, int duracion, String titulo, GeneroPelicula generoPelicula,ClasificacionPelicula clasificacionPelicula) {
-        super(codigoUnico, fechaFuncion, horaIncio, duracion);
+    public Pelicula(int codigo, String titulo, int duracionMinutos, GeneroPelicula genero, String clasificacionEdad) {
+        this.codigo = codigo;
         this.titulo = titulo;
-        this.clasificacionPelicula = clasificacionPelicula;
-        this.generoPelicula = generoPelicula;
+        this.duracionMinutos = duracionMinutos;
+        this.genero = genero;
+        this.clasificacionEdad = clasificacionEdad;
     }
 
-    public GeneroPelicula getGeneroPelicula() {
-        return generoPelicula;
+    public int getCodigo() {
+        return codigo;
     }
 
-    public void setGeneroPelicula(GeneroPelicula generoPelicula) {
-        this.generoPelicula = generoPelicula;
-    }
-
-    public ClasificacionPelicula getClasificacionPelicula() {
-        return clasificacionPelicula;
-    }
-
-    public void setClasificacionPelicula(ClasificacionPelicula clasificacionPelicula) {
-        this.clasificacionPelicula = clasificacionPelicula;
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
     }
 
     public String getTitulo() {
@@ -44,12 +42,36 @@ public class Pelicula extends Funcion{
         this.titulo = titulo;
     }
 
+    public int getDuracionMinutos() {
+        return duracionMinutos;
+    }
+
+    public void setDuracionMinutos(int duracionMinutos) {
+        this.duracionMinutos = duracionMinutos;
+    }
+
+    public GeneroPelicula getGenero() {
+        return genero;
+    }
+
+    public void setGenero(GeneroPelicula genero) {
+        this.genero = genero;
+    }
+
+    public String getClasificacionEdad() {
+        return clasificacionEdad;
+    }
+
+    public void setClasificacionEdad(String clasificacionEdad) {
+        this.clasificacionEdad = clasificacionEdad;
+    }
+
     @Override
     public String toString() {
-        return "Pelicula{" +
-                "titulo='" + titulo + '\'' +
-                ", generoPelicula=" + generoPelicula +
-                ", clasificacionPelicula=" + clasificacionPelicula +
-                '}';
+        return "Pelicula{codigo=" + codigo +
+                ", titulo=" + titulo +
+                ", duracion=" + duracionMinutos + " min" +
+                ", genero=" + genero +
+                ", clasificacion=" + clasificacionEdad + "}";
     }
 }

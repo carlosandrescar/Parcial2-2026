@@ -1,8 +1,7 @@
 package uniquindio.edu.co.model;
 
 /**
- *  Clase de tipo enum que determina el
- *  el genero de la pelicula
+ * Géneros cinematográficos disponibles en CinePlus.
  */
 public enum GeneroPelicula {
     ACCION,

@@ -1,67 +1,66 @@
 package uniquindio.edu.co.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Persona {
-    private String nombre;
-    private int numeroTelefono;
-    private String correo;
-    private int documento;
+/**
+ * Clase abstracta que representa a una persona vinculada con CinePlus.
+ * Puede ser un Cliente o un Operario.
+ */
+public abstract class Persona {
+    private String documento;
+    private String nombreCompleto;
+    private String correoElectronico;
+    private String telefono;
 
     /**
-     * Metodo constructor de persona
-     * @param nombre de persona
-     * @param numeroTelefono de persona
-     * @param correo de persona
-     * @param documento de persona
+     * Constructor de Persona
+     * @param documento documento de identidad
+     * @param nombreCompleto nombre completo
+     * @param correoElectronico correo electrónico
+     * @param telefono número de teléfono (String porque un celular de 10 dígitos no cabe en un int)
      */
-    public Persona(String nombre, int numeroTelefono, String correo, int documento) {
-        this.nombre = nombre;
-        this.numeroTelefono = numeroTelefono;
-        this.correo = correo;
+    public Persona(String documento, String nombreCompleto, String correoElectronico, String telefono) {
         this.documento = documento;
-
-    }
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreCompleto = nombreCompleto;
+        this.correoElectronico = correoElectronico;
+        this.telefono = telefono;
     }
 
-    public int getNumeroTelefono() {
-        return numeroTelefono;
-    }
-
-    public void setNumeroTelefono(int numeroTelefono) {
-        this.numeroTelefono = numeroTelefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public int getDocumento() {
+    public String getDocumento() {
         return documento;
     }
 
-    public void setDocumento(int documento) {
+    public void setDocumento(String documento) {
         this.documento = documento;
+    }
+
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", numeroTelefono=" + numeroTelefono +
-                ", correo='" + correo + '\'' +
-                ", documento=" + documento +
-                '}';
+        return "documento=" + documento +
+                ", nombre=" + nombreCompleto +
+                ", correo=" + correoElectronico +
+                ", teléfono=" + telefono;
     }
 }
